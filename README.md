@@ -2,7 +2,7 @@
 
 ## How to run
 
-1. Set the you google project id to DATASTORE_PROJECT_ID environment variable
+1. Set your google project id to DATASTORE_PROJECT_ID environment variable
 
 ```bash
 $ go run main.go
