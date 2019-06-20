@@ -1,11 +1,11 @@
 package v1
 
 import (
-	"github.com/gin-gonic/gin"
-	"io/ioutil"
 	"fmt"
 	"github.com/Sheshagiri/go-protobuf-cloud-datastore/models"
+	"github.com/gin-gonic/gin"
 	"github.com/gogo/protobuf/proto"
+	"io/ioutil"
 )
 
 func AddUser(c *gin.Context) {

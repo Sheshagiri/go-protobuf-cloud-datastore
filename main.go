@@ -3,8 +3,8 @@ package main
 import (
 	"github.com/Sheshagiri/go-protobuf-cloud-datastore/models"
 	"github.com/Sheshagiri/go-protobuf-cloud-datastore/routers"
-	"net/http"
 	"log"
+	"net/http"
 )
 
 func init() {
@@ -15,7 +15,7 @@ func main() {
 	routers := routers.InitRouters()
 	address := ":8080"
 	server := &http.Server{
-		Addr: address,
+		Addr:    address,
 		Handler: routers,
 	}
 
