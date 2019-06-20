@@ -1,22 +1,24 @@
 package v1
 
 import (
-	"fmt"
+	"log"
 	"github.com/Sheshagiri/go-protobuf-cloud-datastore/models"
 	"github.com/gin-gonic/gin"
-	"github.com/gogo/protobuf/proto"
-	"io/ioutil"
+	"github.com/gogo/protobuf/jsonpb"
 )
 
 func AddUser(c *gin.Context) {
-	data, err := ioutil.ReadAll(c.Request.Body)
+	/*data, err := ioutil.ReadAll(c.Request.Body)
+	if err != nil {
+		log.Println("unable to read all the data from http request",err)
+	}
+	fmt.Printf("data received is: %v", data)*/
+
 	user := models.User{}
 
-	if err != nil {
-		fmt.Println(err)
+	if err := jsonpb.Unmarshal(c.Request.Body, &user); err != nil {
+		log.Println("unable to unmarshall to user",err)
 	}
-	if err := proto.Unmarshal(data, &user); err != nil {
-		fmt.Println(err)
-	}
+	log.Println("user is: ",user)
 	models.AddUser(&user)
 }
