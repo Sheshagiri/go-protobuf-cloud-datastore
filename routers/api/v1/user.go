@@ -4,7 +4,8 @@ import (
 	"log"
 	"github.com/Sheshagiri/go-protobuf-cloud-datastore/models"
 	"github.com/gin-gonic/gin"
-	"github.com/gogo/protobuf/jsonpb"
+	"github.com/golang/protobuf/jsonpb"
+	"github.com/golang/protobuf/proto"
 )
 
 func AddUser(c *gin.Context) {
@@ -20,5 +21,6 @@ func AddUser(c *gin.Context) {
 		log.Println("unable to unmarshall to user",err)
 	}
 	log.Println("user is: ",user)
+	proto.DiscardUnknown(&user)
 	models.AddUser(&user)
 }

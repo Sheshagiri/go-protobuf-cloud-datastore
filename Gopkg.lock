@@ -38,17 +38,10 @@
   version = "v1.4.0"
 
 [[projects]]
-  digest = "1:48092bf6632f55839850666c33469f546f6d45fdbd59a66759ec12e84d853dc2"
-  name = "github.com/gogo/protobuf"
-  packages = ["proto"]
-  pruneopts = "UT"
-  revision = "ba06b47c162d49f2af050fb4c75bcbc86a159d5c"
-  version = "v1.2.1"
-
-[[projects]]
-  digest = "1:499b09c6fecbec76e839ef9acf07af100219048ed22b3ca7d78948ae2767e781"
+  digest = "1:71249dd076f73144e802af61a22665e8523846412be6b5a0ed96cc2b0535efe2"
   name = "github.com/golang/protobuf"
   packages = [
+    "jsonpb",
     "proto",
     "protoc-gen-go/descriptor",
     "ptypes",
@@ -336,7 +329,7 @@
   input-imports = [
     "cloud.google.com/go/datastore",
     "github.com/gin-gonic/gin",
-    "github.com/gogo/protobuf/proto",
+    "github.com/golang/protobuf/jsonpb",
     "github.com/golang/protobuf/proto",
   ]
   solver-name = "gps-cdcl"

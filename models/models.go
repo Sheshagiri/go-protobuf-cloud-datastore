@@ -10,13 +10,6 @@ import (
 var db *datastore.Client
 var ctx context.Context
 
-type Model struct {
-	ID         int
-	createdOn  int
-	modifiedOn int
-	deletedOn  int
-}
-
 func Setup() {
 	var err error
 	ctx = context.Background()
