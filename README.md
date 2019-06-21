@@ -10,6 +10,7 @@ $ go run main.go
 
 ## How to test
 
+1. Save a user
 ```bash
 $ curl --request POST \
     --url http://localhost:8080/api/v1/users \
@@ -19,6 +20,14 @@ $ curl --request POST \
   	"first_name":"Steve",
   	"last_name":"Jobs"
   }'
+```
+
+2. Get all the users
+
+```bash
+$ curl --request GET \
+    --url http://localhost:8080/api/v1/users \
+    --header 'content-type: application/json'
 ```
 
 ## How to verify
