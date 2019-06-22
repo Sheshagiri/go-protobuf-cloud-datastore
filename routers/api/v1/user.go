@@ -1,6 +1,7 @@
 package v1
 
 import (
+	"cloud.google.com/go/datastore"
 	"github.com/Sheshagiri/go-protobuf-cloud-datastore/models"
 	"github.com/gin-gonic/gin"
 	"github.com/golang/protobuf/jsonpb"
@@ -31,4 +32,18 @@ func GetUsers(c *gin.Context) {
 		c.JSON(500, err.Error())
 	}
 	c.JSON(200, users)
+}
+
+func GetUser(c *gin.Context) {
+	username := c.Param("username")
+	log.Printf("get %s details", username)
+	user, err := models.GetUser(username)
+	if err != nil {
+		if err == datastore.ErrNoSuchEntity {
+			c.JSON(404, "no such user")
+			return
+		}
+		c.JSON(500, err.Error())
+	}
+	c.JSON(200, user)
 }

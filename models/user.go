@@ -25,3 +25,12 @@ func GetUsers() (users []User, err error) {
 	}
 	return
 }
+
+func GetUser(username string) (user User, err error) {
+	searchKey := datastore.NameKey(helpers.USERS, username, nil)
+	if err = db.Get(ctx, searchKey, &user); err != nil {
+		log.Printf("unable to query user: %s", username)
+		return
+	}
+	return
+}
