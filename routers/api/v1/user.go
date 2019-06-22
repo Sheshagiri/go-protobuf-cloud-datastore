@@ -56,3 +56,14 @@ func DeleteUser(c *gin.Context) {
 	}
 	c.JSON(200, nil)
 }
+
+func UpdateUser(c *gin.Context) {
+	user := models.User{}
+
+	if err := jsonpb.Unmarshal(c.Request.Body, &user); err != nil {
+		log.Println("unable to unmarshall to user", err)
+	}
+	log.Printf("updating details of %s: ", user.Username)
+	proto.DiscardUnknown(&user)
+	models.AddUser(&user)
+}
