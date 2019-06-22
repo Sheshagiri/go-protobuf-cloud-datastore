@@ -38,6 +38,13 @@ curl --request GET \
   --header 'content-type: application/json'
 ```
 
+4. Delete a user
+
+```bash
+curl --request DELETE \
+  --url http://localhost:8080/api/v1/users/tim
+```
+
 ## How to verify
 
 You should see an entry in google cloud firestore with `users` as the key.
