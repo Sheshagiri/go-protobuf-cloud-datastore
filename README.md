@@ -30,6 +30,14 @@ $ curl --request GET \
     --header 'content-type: application/json'
 ```
 
+3. Get details of user
+
+```bash
+curl --request GET \
+  --url http://localhost:8080/api/v1/users/{Username} \
+  --header 'content-type: application/json'
+```
+
 ## How to verify
 
 You should see an entry in google cloud firestore with `users` as the key.
