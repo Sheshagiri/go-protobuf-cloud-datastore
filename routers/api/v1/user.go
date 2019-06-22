@@ -47,3 +47,12 @@ func GetUser(c *gin.Context) {
 	}
 	c.JSON(200, user)
 }
+
+func DeleteUser(c *gin.Context) {
+	username := c.Param("username")
+	log.Printf("deleting %s", username)
+	if err := models.DeleteUser(username); err != nil {
+		c.JSON(500, err.Error())
+	}
+	c.JSON(200, nil)
+}

@@ -16,7 +16,7 @@ func InitRouters() *gin.Engine {
 	v1.GET("/users/:username", apiv1.GetUser)
 	v1.POST("/users", apiv1.AddUser)
 	//v1.PUT("/users/:id", v1.EditUser)
-	//v1.DELETE("/users/:id", v1.DeleteUser)
+	v1.DELETE("/users/:username", apiv1.DeleteUser)
 
 	return r
 }

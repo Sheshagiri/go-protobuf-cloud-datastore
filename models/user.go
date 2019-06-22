@@ -34,3 +34,9 @@ func GetUser(username string) (user User, err error) {
 	}
 	return
 }
+
+func DeleteUser(username string) (err error) {
+	deleteKey := datastore.NameKey(helpers.USERS, username, nil)
+	err = db.Delete(ctx, deleteKey)
+	return
+}
