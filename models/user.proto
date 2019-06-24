@@ -2,8 +2,12 @@ syntax = "proto3";
 
 package models;
 
+import "github.com/golang/protobuf/ptypes/timestamp/timestamp.proto";
+
 message User {
     string username =1;
     string first_name=2;
     string last_name=3;
+    google.protobuf.Timestamp created_on=4;
+    google.protobuf.Timestamp last_updated_on=5;
 }

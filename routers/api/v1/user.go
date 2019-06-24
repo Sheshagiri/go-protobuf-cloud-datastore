@@ -65,5 +65,5 @@ func UpdateUser(c *gin.Context) {
 	}
 	log.Printf("updating details of %s: ", user.Username)
 	proto.DiscardUnknown(&user)
-	models.AddUser(&user)
+	models.UpdateUser(&user)
 }
