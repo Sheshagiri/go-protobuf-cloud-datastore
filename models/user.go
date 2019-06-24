@@ -3,8 +3,8 @@ package models
 import (
 	"cloud.google.com/go/datastore"
 	"github.com/Sheshagiri/go-protobuf-cloud-datastore/helpers"
-	"log"
 	"github.com/golang/protobuf/ptypes"
+	"log"
 )
 
 // AddUser adds a use to the cloud data store
